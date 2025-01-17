@@ -14,6 +14,10 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: '*' } });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to my Node.js app!');
+  });
+
 // Middleware
 app.use(express.json());
 app.use('/api/auth', authRoutes);
